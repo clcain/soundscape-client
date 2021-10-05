@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  airplay:
+    build: ./airplay
+    restart: on-failure
+    network_mode: host
+    env_file:
+      - .env
+
+  librespot:
+    build: ./librespot
+    restart: on-failure
+    network_mode: host
+    env_file:
+      - .env
+
+  snapclient:
+    build:
+      context: ./snapcast-client
+      args:
+        SNAPCAST_VERSION: 0.20.0
+    restart: on-failure
+    network_mode: host
+    env_file:
+      - .env
