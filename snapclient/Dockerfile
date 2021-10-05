@@ -17,4 +17,4 @@ RUN wget "https://github.com/badaix/snapcast/releases/download/v${SNAPCAST_VERSI
 
 COPY snapclient.conf /etc/snapclient.conf
 
-CMD snapclient
+CMD snapclient --host "$SOUNDSCAPE_SERVER" --hostID "$DEVICE_NAME"
