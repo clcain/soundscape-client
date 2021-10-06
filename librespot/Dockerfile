@@ -3,6 +3,7 @@ FROM debian:buster
 RUN apt-get update && apt-get install -y \
     build-essential \
     libsdl2-dev \
+    libasound2-dev \
     wget \
     && apt-get clean
 

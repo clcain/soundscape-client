@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     wget && \
     apt-get clean
 
-RUN wget "https://github.com/badaix/snapcast/releases/download/v${SNAPCAST_VERSION}/snapclient_${SNAPCAST_VERSION}-1_amd64.deb" && apt-get install -y "./snapclient_$SNAPCAST_VERSION-1_amd64.deb" && rm "snapclient_${SNAPCAST_VERSION}-1_amd64.deb"
+RUN wget "https://github.com/badaix/snapcast/releases/download/v${SNAPCAST_VERSION}/snapclient_${SNAPCAST_VERSION}-1_armhf.deb" && apt-get install -y "./snapclient_$SNAPCAST_VERSION-1_armhf.deb" && rm "snapclient_${SNAPCAST_VERSION}-1_armhf.deb"
 
 COPY snapclient.conf /etc/snapclient.conf
 

@@ -4,24 +4,29 @@ services:
 
   airplay:
     build: ./airplay
-    restart: on-failure
+    restart: always
     network_mode: host
+    privileged: true
     env_file:
       - .env
+    volumes:
+      - /var/run/dbus:/var/run/dbus
 
   librespot:
     build: ./librespot
-    restart: on-failure
+    restart: always
     network_mode: host
+    privileged: true
     env_file:
       - .env
 
   snapclient:
     build:
-      context: ./snapcast-client
+      context: ./snapclient
       args:
         SNAPCAST_VERSION: 0.20.0
-    restart: on-failure
+    restart: always
     network_mode: host
+    privileged: true
     env_file:
       - .env
