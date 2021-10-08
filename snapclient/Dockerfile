@@ -16,5 +16,6 @@ RUN apt-get update && apt-get install -y \
 RUN wget "https://github.com/badaix/snapcast/releases/download/v${SNAPCAST_VERSION}/snapclient_${SNAPCAST_VERSION}-1_armhf.deb" && apt-get install -y "./snapclient_$SNAPCAST_VERSION-1_armhf.deb" && rm "snapclient_${SNAPCAST_VERSION}-1_armhf.deb"
 
 COPY snapclient.conf /etc/snapclient.conf
+COPY start.sh /
 
-CMD snapclient --host "$SOUNDSCAPE_SERVER" --hostID "$DEVICE_NAME"
+CMD /start.sh
