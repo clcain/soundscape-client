@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ -z "$DEVICE_NAME" ]
+then
+    echo "DEVICE_NAME not defined."
+    exit 1
+fi
+
 SPOTIFY_CREDENTIALS=""
 
 if [ ! -z "$SPOTIFY_USERNAME" ] & [ ! -z "$SPOTIFY_PASSWORD" ]
