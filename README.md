@@ -10,7 +10,7 @@ A Snapcast client deployment through Docker that outputs syncrhonized audio play
 
 ## Usage
 
-This is built for a Debian 10 system with the latest Docker and docker-compose installed. To use, simply run `docker-compose up` or use `make up`. An Airplay destination and a Spotify Connect player should appear on your network. If you experience connection difficulties, ensure that all host firewalls are turned off.
+This is built for a Debian system with the latest Docker and `docker compose` installed. To use, simply run `docker compose up` or use `make up`. An Airplay destination and a Spotify Connect player should appear on your network. If you experience connection difficulties, ensure that all host firewalls are turned off.
 
 *Note: It will take several minutes to compile librespot on a Raspberry Pi. Please be patient; this added delay applies only to the first run.*
 

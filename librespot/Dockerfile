@@ -1,16 +1,18 @@
-FROM debian:buster
+FROM debian:bookworm
 
-RUN apt-get update && apt-get install -y \
+RUN apt update && apt install -y \
+    alsa-utils \
+    avahi-daemon \
     build-essential \
     libasound2-dev \
     libpulse-dev \
     pkg-config \
     wget \
-    && apt-get clean
+    && apt clean
 
 RUN wget -O - https://sh.rustup.rs | sh -s -- -y
 RUN . $HOME/.cargo/env && cargo install librespot --features "alsa-backend pulseaudio-backend" && ln -s /root/.cargo/bin/librespot /usr/local/bin/
 
-COPY start.sh /
+COPY entrypoint.sh /
 
-CMD /start.sh
+CMD /entrypoint.sh
