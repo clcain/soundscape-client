@@ -22,4 +22,4 @@ RUN wget "https://github.com/badaix/snapcast/releases/download/v${SNAPCAST_VERSI
 COPY snapclient.conf /etc/snapclient.conf
 COPY entrypoint.sh /
 
-CMD /entrypoint.sh
+ENTRYPOINT /entrypoint.sh

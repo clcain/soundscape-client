@@ -4,7 +4,9 @@ RUN apt update && apt install -y \
     alsa-utils \
     avahi-daemon \
     build-essential \
+    cmake \
     libasound2-dev \
+    libclang-dev \
     libpulse-dev \
     pkg-config \
     wget \
@@ -15,4 +17,4 @@ RUN . $HOME/.cargo/env && cargo install librespot --features "alsa-backend pulse
 
 COPY entrypoint.sh /
 
-CMD /entrypoint.sh
+ENTRYPOINT /entrypoint.sh
