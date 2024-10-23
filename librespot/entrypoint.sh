@@ -8,4 +8,11 @@ fi
 
 echo "Starting librespot..."
 
-librespot --name "$DEVICE_NAME" --cache /var/cache/librespot --enable-volume-normalisation --volume-ctrl linear --bitrate 320 --initial-volume=25
+librespot \
+    --backend pulseaudio \
+    --name "$DEVICE_NAME" \
+    --cache /var/cache/librespot \
+    --enable-volume-normalisation \
+    --volume-ctrl linear \
+    --bitrate 320 \
+    --initial-volume=25

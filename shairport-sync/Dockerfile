@@ -1,6 +1,6 @@
-FROM mikebrady/shairport-sync:latest
+FROM mikebrady/shairport-sync
 
 COPY shairport-sync.conf /etc/
-COPY entrypoint.sh /
 
-ENTRYPOINT /entrypoint.sh
+ENTRYPOINT /init
+CMD /run.sh -o pa -a $DEVICE_NAME

@@ -10,9 +10,7 @@ A Snapcast client deployment through Docker that outputs syncrhonized audio play
 
 ## Usage
 
-This is built for a Debian system with the latest Docker and `docker compose` installed. To use, simply run `docker compose up` or use `make up`. An Airplay destination and a Spotify Connect player should appear on your network. If you experience connection difficulties, ensure that all host firewalls are turned off.
-
-*Note: It will take several minutes to compile librespot on a Raspberry Pi. Please be patient; this added delay applies only to the first run.*
+This is built for a Debian system with the latest Docker and `docker compose` installed. To use, simply run `docker compose up -d` or use `make up`. An Airplay destination and a Spotify Connect player should appear on your network. If you experience connection difficulties, ensure that all host firewalls are turned off.
 
 ## Configuration
 
@@ -24,5 +22,7 @@ Parameters include:
 | ----------------- | ------------------------------------------------ |
 | DEVICE_NAME       | The device name as it will appear on the network |
 | SOUNDSCAPE_SERVER | The URL of the Soundscape Server instance        |
-| SPOTIFY_USERNAME  | Your Spotify username                            |
-| SPOTIFY_PASSWORD  | Your Spotify password                            |
+
+The default sound device is configured in `default.pa`.
+
+`aplay -L` may be used to list ALSA devices on your machine.

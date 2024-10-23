@@ -6,12 +6,15 @@ then
     exit 1
 fi
 
-if [ -z "$SOUNDSCAPE_SERVER" ]
+if [ -z "$SNAPSERVER_ADDR" ]
 then
-    echo "SOUNDSCAPE_SERVER not defined."
+    echo "SNAPSERVER_ADDR not defined."
     exit 1
 fi
 
 echo "Starting snapclient..."
 
-snapclient --hostID "$DEVICE_NAME" --host "$SOUNDSCAPE_SERVER"
+snapclient \
+    --player pulse \
+    --hostID "$DEVICE_NAME" \
+    --host "$SNAPSERVER_ADDR"
