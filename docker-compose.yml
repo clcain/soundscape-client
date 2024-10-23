@@ -49,7 +49,7 @@ services:
       - pulseaudio
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./snapclient/snapclient.conf:/etc/snapclient.conf.ro
+      - ./snapclient/snapclient.conf:/etc/snapclient.conf:ro
     environment:
       - PULSE_SERVER=tcp:localhost:4713
     env_file:

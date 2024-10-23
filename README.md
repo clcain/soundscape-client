@@ -1,6 +1,6 @@
 # Soundscape Client
 
-A Snapcast client deployment through Docker that outputs syncrhonized audio playback across a TCP/IP network to Snapcast clients on your network. It also supports streaming using Airplay or Spotify Connect.
+A Snapcast client deployment using Docker that outputs syncrhonized audio playback across a TCP/IP network to Snapcast clients on your network. It also supports streaming using Airplay or Spotify Connect.
 
 ## Containers
 
