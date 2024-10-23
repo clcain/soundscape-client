@@ -8,7 +8,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/dbus:/var/run/dbus
-      - ./default.pa:/etc/pulse/default.pa:ro
+      - ./pulseaudio/default.pa:/etc/pulse/default.pa:ro
     command: >
       pulseaudio --exit-idle-time=-1 --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1"
 
@@ -33,6 +33,7 @@ services:
       - pulseaudio
     volumes:
       - /etc/localtime:/etc/localtime:ro
+      - ./shairport-sync/shairport-sync.conf:/etc/shairport-sync.conf:ro
     environment:
       - PULSE_SERVER=tcp:localhost:4713
     env_file:
@@ -48,6 +49,7 @@ services:
       - pulseaudio
     volumes:
       - /etc/localtime:/etc/localtime:ro
+      - ./snapclient/snapclient.conf:/etc/snapclient.conf.ro
     environment:
       - PULSE_SERVER=tcp:localhost:4713
     env_file:

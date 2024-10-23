@@ -19,7 +19,6 @@ RUN apt update && apt install -y \
 
 RUN wget "https://github.com/badaix/snapcast/releases/download/v${SNAPCAST_VERSION}/snapclient_${SNAPCAST_VERSION}-1_$(dpkg --print-architecture)_bookworm_with-pulse.deb" && apt-get install -y "./snapclient_$SNAPCAST_VERSION-1_$(dpkg --print-architecture)_bookworm_with-pulse.deb" && rm "snapclient_${SNAPCAST_VERSION}-1_$(dpkg --print-architecture)_bookworm_with-pulse.deb"
 
-COPY snapclient.conf /etc/
 COPY entrypoint.sh /
 
 ENTRYPOINT /entrypoint.sh
