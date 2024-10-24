@@ -23,6 +23,6 @@ Parameters include:
 | DEVICE_NAME       | The device name as it will appear on the network |
 | SOUNDSCAPE_SERVER | The URL of the Soundscape Server instance        |
 
-The default sound device is configured in `default.pa`.
+The default sound device is configured in [default.pa](./pulseaudio/default.pa).
 
 `aplay -L` may be used to list ALSA devices on your machine.
