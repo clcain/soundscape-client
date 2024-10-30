@@ -29,6 +29,11 @@ push-buildx:
 	docker buildx build ./shairport-sync -t clcain/shairport-sync --platform linux/amd64,linux/arm64,linux/arm/v7 --push
 	docker buildx build ./snapclient -t clcain/snapclient --platform linux/amd64,linux/arm64,linux/arm/v7 --push
 
+pull:
+	docker compose pull
+
+upgrade: pull up
+
 clean:
 	docker compose down -t 0
 	docker compose rm -fv
