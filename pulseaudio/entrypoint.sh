@@ -44,11 +44,6 @@ configure_equalizer() {
             echo "Error: $freq not found in $EQ_FILE. Exiting."
             exit 1
         fi
-
-        if ! [[ "${!freq}" =~ ^-?[0-9]+(\.[0-9]+)?$ ]] || (( $(echo "${!freq} < -10" | bc -l) )) || (( $(echo "${!freq} > 10" | bc -l) )); then
-            echo "Error: $freq value ${!freq} is not a valid float or is out of the [-10, 10] range. Exiting."
-            exit 1
-        fi
     done
 
     CONTROL_VALUES="${FREQ_50},${FREQ_100},${FREQ_156},${FREQ_220},${FREQ_311},${FREQ_440},${FREQ_622},${FREQ_880},${FREQ_1250},${FREQ_1750},${FREQ_2500},${FREQ_3500},${FREQ_5000},${FREQ_10000},${FREQ_20000}"
