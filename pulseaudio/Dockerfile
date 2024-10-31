@@ -10,7 +10,6 @@ RUN apt update && apt install -y \
 
 COPY default.pa /etc/pulse/
 COPY eq.conf /
-COPY equalizer.sh /
 
 COPY entrypoint.sh /
 

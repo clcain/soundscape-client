@@ -1,3 +1,1 @@
 load-module module-alsa-sink sink_name=alsa_output device="hw:0,0"
-load-module module-ladspa-sink sink_name=equalizer plugin=mbeq_1197 label=mbeq control=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-set-default-sink equalizer
