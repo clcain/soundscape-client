@@ -1,6 +1,12 @@
 # Soundscape Client
 
-A Snapcast client deployment using Docker that outputs syncrhonized audio playback across a TCP/IP network to Snapcast clients on your network. It also supports streaming using Airplay 2 and Spotify Connect.
+Turn your Linux device into a smart speaker and easily create a synchronized multi-room audio system with Soundscape!
+
+The following audio sources are supported:
+
+- Snapcast
+- Airplay 2
+- Spotify Connect
 
 ## Containers
 
@@ -10,7 +16,7 @@ A Snapcast client deployment using Docker that outputs syncrhonized audio playba
 
 ## Usage
 
-This is built for a Debian system with the latest Docker and `docker compose` installed. To use, simply run `docker compose up -d` or use `make up`. An Airplay destination and a Spotify Connect player should appear on your network. If you experience connection difficulties, ensure that all host firewalls are turned off.
+Soundscape is built for a Debian/Raspbian system with the latest Docker and `docker compose` installed. To use, simply run `make up` or `docker compose up -d`.
 
 ## Configuration
 
@@ -21,8 +27,14 @@ Parameters include:
 | Parameter         | Description                                      |
 | ----------------- | ------------------------------------------------ |
 | DEVICE_NAME       | The device name as it will appear on the network |
-| SOUNDSCAPE_SERVER | The URL of the Soundscape Server instance        |
+| SNAPSERVER_ADDR   | The address of the snapserver instance           |
 
 The default sound device is configured in [default.pa](./pulseaudio/default.pa).
 
 `aplay -L` may be used to list ALSA devices on your machine.
+
+### Equalization
+
+Soundscape includes a built-in EQ for the client device. To use it, edit [eq.conf](./pulseaudio/eq.conf)
+
+Run `make up` to apply changes.
