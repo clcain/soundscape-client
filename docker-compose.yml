@@ -7,7 +7,6 @@ services:
       - /dev/snd
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./pulseaudio/default.pa:/etc/pulse/default.pa:ro
       - ./pulseaudio/eq.conf:/eq.conf:ro
 
   librespot:
@@ -31,7 +30,6 @@ services:
       - pulseaudio
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./shairport-sync/shairport-sync.conf:/etc/shairport-sync.conf:ro
     environment:
       - PULSE_SERVER=tcp:localhost:4713
     env_file:
@@ -47,7 +45,6 @@ services:
       - pulseaudio
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./snapclient/snapclient.conf:/etc/snapclient.conf:ro
     environment:
       - PULSE_SERVER=tcp:localhost:4713
     env_file:
