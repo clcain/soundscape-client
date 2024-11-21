@@ -8,6 +8,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./pulseaudio/eq.conf:/eq.conf:ro
+      - ./pulseaudio/entrypoint.sh:/entrypoint.sh:ro
 
   librespot:
     image: clcain/librespot
@@ -17,6 +18,7 @@ services:
       - pulseaudio
     volumes:
       - /etc/localtime:/etc/localtime:ro
+      - ./librespot/entrypoint.sh:/entrypoint.sh:ro
     environment:
       - PULSE_SERVER=tcp:localhost:4713
     env_file:
@@ -45,6 +47,7 @@ services:
       - pulseaudio
     volumes:
       - /etc/localtime:/etc/localtime:ro
+      - ./snapclient/entrypoint.sh:/entrypoint.sh:ro
     environment:
       - PULSE_SERVER=tcp:localhost:4713
     env_file:
