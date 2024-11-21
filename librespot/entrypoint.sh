@@ -13,6 +13,6 @@ librespot \
     --name "$DEVICE_NAME" \
     --cache /var/cache/librespot \
     --enable-volume-normalisation \
-    --volume-ctrl linear \
+    --volume-ctrl cubic \
     --bitrate 320 \
     --initial-volume=25
