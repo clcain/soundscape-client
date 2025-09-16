@@ -8,6 +8,7 @@ RUN apt update && apt install -y \
     libasound2-dev \
     libclang-dev \
     libpulse-dev \
+    libssl-dev \
     pkg-config \
     wget \
     && apt clean
