@@ -29,6 +29,12 @@ push-buildx:
 	docker buildx build ./shairport-sync -t clcain/shairport-sync --platform linux/amd64,linux/arm64,linux/arm/v7 --push
 	docker buildx build ./snapclient -t clcain/snapclient --platform linux/amd64,linux/arm64,linux/arm/v7 --push
 
+push-tag-latest:
+	docker buildx imagetools create -t clcain/pulseaudio:$(tag) clcain/pulseaudio:latest
+	docker buildx imagetools create -t clcain/librespot:$(tag) clcain/librespot:latest
+	docker buildx imagetools create -t clcain/shairport-sync:$(tag) clcain/shairport-sync:latest
+	docker buildx imagetools create -t clcain/snapclient:$(tag) clcain/snapclient:latest
+
 pull:
 	docker compose pull
 
